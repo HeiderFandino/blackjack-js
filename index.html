@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLACKJACK ♠️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLACKJACK ♠️</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
 </head>
 <body>
-<header class="titulo">BLACKJACK ♠️</header>
+  <header class="titulo">BLACKJACK ♠️</header>
 
-<div class="row mt-2">
-  <div  id ="divBotones"   class="col text-center">
-    <button id="btnNuevo"  class="btn btn-danger">Nuevo juego</button>
-    <button id="btnPedir"  class="btn btn-primary">Pedir carta</button>
-    <button id="btnDetener"class="btn btn-primary">Detener</button>
+  <div class="row mt-2">
+    <div id="divBotones" class="col text-center">
+      <button id="btnNuevo" class="btn btn-danger">Nuevo juego</button>
+      <button id="btnPedir" class="btn btn-primary">Pedir carta</button>
+      <button id="btnDetener" class="btn btn-primary">Detener</button>
+    </div>
   </div>
-</div>
 
-<div class=" row container">
+  <div class="row container mt-3">
     <div class="col">
-        <h1>Jugador 1 - <small>0</small></h1>
-        <div id="jugador-carta">
-            <!-- <img class="carta" src="assets/cartas/cartas/10C.png" alt="10 de corazones"> -->
-            <!-- <img class="carta" src="assets/cartas/cartas/10C.png" alt="10 de corazones">
-            <img class="carta" src="assets/cartas/cartas/10C.png" alt="10 de corazones">
-            <img class="carta" src="assets/cartas/cartas/10C.png" alt="10 de corazones"> -->
-        </div>
+      <h1>Jugador 1 - <small>0</small></h1>
+      <div id="jugador-carta"></div>
     </div>
-    
+  </div>
 
-    <div class=" row container mt-4">
+  <div class="row container mt-4">
     <div class="col">
-        <h1>Computadora - <small>0</small></h1>
-        <div id="computadora-carta">
-            <!-- <img class="carta" src="assets/cartas/cartas/3C.png" alt="10 de corazones"> -->
-            <!-- <img class="carta" src="assets/cartas/cartas/3C.png" alt="10 de corazones">
-            <img class="carta" src="assets/cartas/cartas/3C.png" alt="10 de corazones">
-            <img class="carta" src="assets/cartas/cartas/3C.png" alt="10 de corazones"> -->
-        </div>
+      <h1>Computadora - <small>0</small></h1>
+      <div id="computadora-carta"></div>
     </div>
+  </div>
 
+  <!-- Overlay de efectos (explosiones / memes) -->
+  <div id="fx-overlay" aria-hidden="true"></div>
 
-
-
-
-    <script src="assets/js/underscore-min.js"></script>
-    <script src="assets/js/juego.js"></script>
+  <!-- JS -->
+  <script src="assets/js/underscore-min.js"></script>
+  <script src="assets/js/juego.js"></script>
 </body>
 </html>
