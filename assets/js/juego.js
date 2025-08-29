@@ -17,75 +17,7 @@ const puntosAcomulados = document.querySelectorAll("small");
 const btnDetener = document.querySelector("#btnDetener");
 const btnNuevo = document.querySelector("#btnNuevo");
 
-/* =========================
-   Historial (panel derecho, 2 columnas)
-   ========================= */
-let historial = []; // valores: "win" | "lose" | "draw"
 
-const renderHistorial = () => {
-  let cont = document.getElementById("historial-zone");
-
-  // Si aún no hay partidas, no mostramos nada
-  if (historial.length === 0) {
-    if (cont) cont.remove();
-    return;
-  }
-
-  if (!cont) {
-    cont = document.createElement("div");
-    cont.id = "historial-zone";
-
-    // ——— Panel fijo a la derecha
-    cont.style.position = "fixed";
-    cont.style.top = "100px";
-    cont.style.right = "10px";
-    cont.style.width = "220px";
-    cont.style.maxHeight = "420px";
-    cont.style.overflowY = "auto";
-    cont.style.padding = "10px";
-    cont.style.background = "rgba(0,0,0,0.7)";
-    cont.style.border = "1px solid #555";
-    cont.style.borderRadius = "10px";
-    cont.style.color = "#fff";
-    cont.style.zIndex = "9999";
-
-    cont.innerHTML = `
-      <h4 style="margin:0 0 8px;">📜 Historial</h4>
-      <table id="tablaHistorial" style="border-collapse:collapse; text-align:center; width:100%;">
-        <thead>
-          <tr>
-            <th style="padding:6px; border:1px solid #ccc;">Win</th>
-            <th style="padding:6px; border:1px solid #ccc;">Lose</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    `;
-    document.body.appendChild(cont);
-  }
-
-  const tbody = cont.querySelector("tbody");
-  tbody.innerHTML = historial.map(r => {
-    // Colores por resultado
-    let winCell = "";
-    let loseCell = "";
-    if (r === "win") {
-      winCell = "background:limegreen;";
-    } else if (r === "lose") {
-      loseCell = "background:crimson;";
-    } else if (r === "draw") {
-      winCell = "background:gold;";
-      loseCell = "background:gold;";
-    }
-
-    return `
-      <tr>
-        <td style="width:50%; height:24px; border:1px solid #ccc; ${winCell}"></td>
-        <td style="width:50%; height:24px; border:1px solid #ccc; ${loseCell}"></td>
-      </tr>
-    `;
-  }).join("");
-};
 
 const registrarResultado = (resultado) => {
   historial.unshift(resultado);                 // última partida arriba
